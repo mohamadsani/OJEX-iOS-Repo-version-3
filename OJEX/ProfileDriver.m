@@ -109,7 +109,6 @@ int imageShowed = 0;
     }
 }
 
-
 - (void) UIUpdate {
     
     //below code will updates the UI of profile, such as name, image, etc. User object will using User object at <GlobalVar userProfile> variable.
@@ -397,6 +396,46 @@ int imageShowed = 0;
 
 - (IBAction)secondImageSlideToRight:(id)sender {
       [self slideImageToRight];
+}
+
+- (IBAction)makeCall:(id)sender {
+    GlobalVar* g = [GlobalVar getInstance];
+    User* u = g.userProfile;
+    
+    NSString* phoneNumber = u.profile.phoneNumber;
+    NSString* number = [NSString stringWithFormat:@"%@",phoneNumber];
+    NSURL* callUrl=[NSURL URLWithString:[NSString stringWithFormat:@"telprompt:%@", number]];
+    
+    //check  Call Function available only in iphone
+    if ([[UIApplication sharedApplication] canOpenURL:callUrl])
+    {
+        [[UIApplication sharedApplication] openURL:callUrl];
+    }
+    else
+    {
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"ALERT" message:@"This function is only available on the iPhone"  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+- (IBAction)sendMessage:(id)sender {
+    GlobalVar* g = [GlobalVar getInstance];
+    User* u = g.userProfile;
+    
+    NSString* phoneNumber = u.profile.phoneNumber;
+    NSString* number = [NSString stringWithFormat:@"%@",phoneNumber];
+    NSURL* messageUrl=[NSURL URLWithString:[NSString stringWithFormat:@"sms:%@", number]];
+    
+    //check  Call Function available only in iphone
+    if ([[UIApplication sharedApplication] canOpenURL:messageUrl])
+    {
+        [[UIApplication sharedApplication] openURL:messageUrl];
+    }
+    else
+    {
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"ALERT" message:@"This function is only available on the iPhone"  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 @end

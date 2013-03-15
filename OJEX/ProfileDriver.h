@@ -42,6 +42,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *antarCountLabel;
 - (IBAction)imageSlideToRight:(id)sender;
 - (IBAction)secondImageSlideToRight:(id)sender;
+- (IBAction)makeCall:(id)sender;
+- (IBAction)sendMessage:(id)sender;
 
 
 @end
