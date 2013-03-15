@@ -9,7 +9,7 @@
 #import "TimelineItem.h"
 
 @implementation TimelineItem
-@synthesize via,user,source,destination,timestamp,priceInPoint,priceInRupiah;
+@synthesize via,user,source,destination,timestamp,priceInPoint,priceInRupiah,sourceLabel,destinationLabel;
 
 - (void) createDataWithJSON:(NSDictionary*) data {
     self.user = [[User alloc] init];
@@ -28,6 +28,8 @@
     self.source.longitude = [data objectForKey:@"source_longitude"];
     self.destination.latitude = [data objectForKey:@"destination_latitude"];
     self.destination.longitude = [data objectForKey:@"destination_longitude"];
+    self.user.source = [data objectForKey:@"source_label"];
+    self.user.destination = [data objectForKey:@"destination_label"];
 
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"YYYY-MM-DD HH:mm:ss"];

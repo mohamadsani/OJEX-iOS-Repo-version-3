@@ -1603,10 +1603,10 @@
             </objects>
             <point key="canvasLocation" x="1317" y="1293"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Premium Page Controller-->
         <scene sceneID="pOI-6q-Jm4">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="nF7-VR-cUN" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="nF7-VR-cUN" customClass="PremiumPageController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="JKE-uc-IEw">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="ryn-eU-HwP">
                             <view key="customView" contentMode="scaleToFill" id="ntg-2b-t80">
@@ -2137,6 +2137,9 @@
                 <relationship kind="outlet" name="toLocationField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="viaLocationField" candidateClass="UITextField"/>
             </relationships>
+        </class>
+        <class className="PremiumPageController" superclassName="UIPageViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PremiumPageController.h"/>
         </class>
         <class className="ProfileWrapperController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileWrapperController.h"/>

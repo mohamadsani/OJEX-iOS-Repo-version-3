@@ -117,7 +117,13 @@ int imageShowed = 0;
     User* u = g.userProfile; //get the profile
     
     [self.secondImageView setImage:u.avatar];
+    if (u.avatar == nil)
+        [self.secondImageView setImage:[UIImage imageNamed:@"ic_blank_avatar.gif"]];
+    
     [self.firstImageView setImage:u.profile.motorImage];
+    if (u.profile.motorImage == nil)
+        [self.firstImageView setImage:[UIImage imageNamed:@"ic_blank_bike.png"]];
+    
     [self.profileNameLabel setText:u.name];
     [self.antarCountLabel setText:[NSString stringWithFormat:@"%d",u.profile.deliver]];
     

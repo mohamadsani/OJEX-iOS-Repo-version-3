@@ -20,6 +20,8 @@
 @property int priceInPoint;
 @property int priceInRupiah;
 @property NSString* via;
+@property NSString* sourceLabel;
+@property NSString* destinationLabel;
 
 - (void) createDataWithJSON:(NSDictionary*) data;
 @end

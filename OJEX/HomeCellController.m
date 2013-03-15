@@ -30,6 +30,8 @@
 {
     User* user = [self.tl user];
     [self.avatar setImage:user.avatar];
+    if (user.avatar == nil)
+        [self.avatar setImage:[UIImage imageNamed:@"ic_blank_avatar.gif"]];
     self.nameLabel.text = user.name;
     self.sourceAndDestinationLabel.text = [NSString stringWithFormat:@"%@ -> %@",user.source, user.destination];
     
