@@ -556,6 +556,7 @@
                 <navigationController definesPresentationContext="YES" id="y90-1y-I53" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hCf-T1-JiY">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.46001447340000001" green="0.67835354790000002" blue="0.94646843110000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="mWZ-YH-tOg" kind="relationship" relationship="rootViewController" id="vGE-bn-cXe"/>
@@ -1503,6 +1504,7 @@
                 <navigationController storyboardIdentifier="SettingNavigation" definesPresentationContext="YES" id="7rd-yT-P57" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dx6-0G-qwm">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.46001447342938823" green="0.67835354788935764" blue="0.94646843112244894" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="clJ-nW-L9S" kind="relationship" relationship="rootViewController" id="Z9v-ZU-h41"/>
@@ -1594,6 +1596,7 @@
                 <navigationController storyboardIdentifier="PremiumNavigation" definesPresentationContext="YES" id="csS-iQ-7Pg" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qLu-BN-Byw">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.46001447340000001" green="0.67835354790000002" blue="0.94646843110000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="nF7-VR-cUN" kind="relationship" relationship="rootViewController" id="lB2-x5-VYs"/>
@@ -1603,11 +1606,11 @@
             </objects>
             <point key="canvasLocation" x="1317" y="1293"/>
         </scene>
-        <!--Premium Page Controller-->
+        <!--Premium Page Controller - Go Premium-->
         <scene sceneID="pOI-6q-Jm4">
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="nF7-VR-cUN" customClass="PremiumPageController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="JKE-uc-IEw">
+                    <navigationItem key="navigationItem" title="Go Premium" id="JKE-uc-IEw">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="ryn-eU-HwP">
                             <view key="customView" contentMode="scaleToFill" id="ntg-2b-t80">
                                 <rect key="frame" x="5" y="0.0" width="44" height="44"/>
@@ -1625,12 +1628,17 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="GxR-7c-Fbp" kind="unwind" unwindAction="returnedFromProfile:" id="Ou3-Nw-Wjp"/>
+                                            <segue destination="GxR-7c-Fbp" kind="unwind" unwindAction="returnedFromProfile:" id="cAa-g1-93P"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Go!" id="asl-w1-dK1">
+                            <connections>
+                                <action selector="goPremium:" destination="nF7-VR-cUN" id="VcD-1x-1dd"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </pageViewController>
@@ -2100,6 +2108,8 @@
                 <relationship kind="action" name="editStartTime:"/>
                 <relationship kind="action" name="fromMapButtonListener:"/>
                 <relationship kind="action" name="homeSegmentControlListener:"/>
+                <relationship kind="action" name="returnedFromProfile:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="returnedFromSearch:" candidateClass="UIStoryboardSegue"/>
                 <relationship kind="outlet" name="fromDateField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="homeSegmentControl" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
@@ -2113,6 +2123,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginController.h"/>
             <relationships>
                 <relationship kind="action" name="LoginButtonListener:"/>
+                <relationship kind="action" name="geserKanan:"/>
+                <relationship kind="action" name="logout:" candidateClass="UIStoryboardSegue"/>
                 <relationship kind="action" name="usernameEditEnd:"/>
                 <relationship kind="action" name="usernameEditStart:"/>
                 <relationship kind="outlet" name="myTableView" candidateClass="UITableView"/>
@@ -2140,6 +2152,9 @@
         </class>
         <class className="PremiumPageController" superclassName="UIPageViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PremiumPageController.h"/>
+            <relationships>
+                <relationship kind="action" name="goPremium:"/>
+            </relationships>
         </class>
         <class className="ProfileWrapperController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileWrapperController.h"/>
@@ -2174,6 +2189,9 @@
                 <relationship kind="outlet" name="facebookSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="twitterSwitch" candidateClass="UISwitch"/>
             </relationships>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

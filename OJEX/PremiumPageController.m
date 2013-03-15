@@ -7,6 +7,7 @@
 //
 
 #import "PremiumPageController.h"
+#import "PremiumView.h"
 
 @interface PremiumPageController ()
 
@@ -28,26 +29,43 @@
 {
     [super viewDidLoad];
 	
-    //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle: nil];
-    
     NSMutableArray *vcs = [[NSMutableArray alloc] init];
-    UIView *vc = (UIView*) [[[NSBundle mainBundle] loadNibNamed:@"CommentCell" owner:self options:nil] objectAtIndex:0];
-    UIViewController* uivc = [[UIViewController alloc] init];
     
-    [uivc setView:vc];
-    UIView *vc2 = (UIView*) [[[NSBundle mainBundle] loadNibNamed:@"SearchButton" owner:self options:nil] objectAtIndex:0];
-    UIViewController* uivc2 = [[UIViewController alloc] init];
-    [uivc2 setView:vc2];
-    [vcs addObject:uivc];
-    [vcs addObject:uivc2];
+    PremiumView *v1 = (PremiumView*) [[[NSBundle mainBundle] loadNibNamed:@"PremiumView" owner:self options:nil] objectAtIndex:0];
+    [v1 setContent:1];
+    UIViewController* vc1 = [[UIViewController alloc] init];
+    [vc1 setView:v1];
+    [vcs addObject:vc1];
     
-    //tambahkan view lainnya seperti diatas
+    PremiumView *v2 = (PremiumView*) [[[NSBundle mainBundle] loadNibNamed:@"PremiumView" owner:self options:nil] objectAtIndex:0];
+    [v2 setContent:2];
+    UIViewController* vc2 = [[UIViewController alloc] init];
+    [vc2 setView:v2];
+    [vcs addObject:vc2];
+    
+    PremiumView *v3 = (PremiumView*) [[[NSBundle mainBundle] loadNibNamed:@"PremiumView" owner:self options:nil] objectAtIndex:0];
+    [v3 setContent:3];
+    UIViewController* vc3 = [[UIViewController alloc] init];
+    [vc3 setView:v3];
+    [vcs addObject:vc3];
+    
+    PremiumView *v4 = (PremiumView*) [[[NSBundle mainBundle] loadNibNamed:@"PremiumView" owner:self options:nil] objectAtIndex:0];
+    [v4 setContent:4];
+    UIViewController* vc4 = [[UIViewController alloc] init];
+    [vc4 setView:v4];
+    [vcs addObject:vc4];
+    
+    PremiumView *v5 = (PremiumView*) [[[NSBundle mainBundle] loadNibNamed:@"PremiumView" owner:self options:nil] objectAtIndex:0];
+    [v5 setContent:5];
+    UIViewController* vc5 = [[UIViewController alloc] init];
+    [vc5 setView:v5];
+    [vcs addObject:vc5];
     
     
     //jangan otak atik dibawah sini
     
     NSMutableArray *vcsinit = [[NSMutableArray alloc] init];
-    [vcsinit addObject:uivc];
+    [vcsinit addObject:vc1];
     self.modelArray = vcs;
     
     //set delegate and datasource protocols
@@ -93,4 +111,6 @@
        return cVC;
 }
 
+- (IBAction)goPremium:(id)sender {
+}
 @end

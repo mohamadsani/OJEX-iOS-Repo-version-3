@@ -11,5 +11,6 @@
 @interface PremiumPageController : UIPageViewController<UIPageViewControllerDataSource,UIPageViewControllerDelegate>
 
 @property NSMutableArray* modelArray;
+- (IBAction)goPremium:(id)sender;
 
 @end
