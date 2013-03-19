@@ -4,69 +4,36 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller - Map-->
-        <scene sceneID="zq8-aV-amc">
-            <objects>
-                <tableViewController id="rtc-Mg-QtB" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="maU-3V-9G5">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections>
-                            <tableViewSection id="k9F-yE-LN4">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="202" id="cOs-gl-rIB">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="202"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="201"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="0fZ-ZV-K3y">
-                                        <rect key="frame" x="0.0" y="202" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="xZU-JQ-fin">
-                                        <rect key="frame" x="0.0" y="246" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Map" id="QIE-i2-feF"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uHp-Cn-q20" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="596" y="-2448"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="mZq-A4-61M">
             <objects>
-                <navigationController storyboardIdentifier="MapNavigation" definesPresentationContext="YES" id="aKz-SV-TzX" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MapNavigation" definesPresentationContext="YES" navigationBarHidden="YES" id="aKz-SV-TzX" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gX1-E6-7Kw">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.57310550500000002" green="0.80837604959999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="rtc-Mg-QtB" kind="relationship" relationship="rootViewController" id="pPL-F8-LdX"/>
+                        <segue destination="ZFo-et-4fg" kind="relationship" relationship="rootViewController" id="guJ-AR-Ktf"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RlZ-gr-KrH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="167" y="-2448"/>
+        </scene>
+        <!--Map Pick Controller-->
+        <scene sceneID="i6d-zS-zhN">
+            <objects>
+                <viewController id="ZFo-et-4fg" customClass="MapPickController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SC8-bL-JSl">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="U9Z-IH-Hwn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nZJ-Hx-1FO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="611" y="-2447"/>
         </scene>
         <!--Register Controller - Register-->
         <scene sceneID="r6v-az-vPD">
@@ -2073,127 +2040,6 @@
         <image name="ic_twitter.jpeg" width="48" height="48"/>
         <image name="topan.jpg" width="323" height="220"/>
     </resources>
-    <classes>
-        <class className="EditProfileController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditProfileController.h"/>
-            <relationships>
-                <relationship kind="action" name="submitButtonListener:"/>
-                <relationship kind="outlet" name="alamat" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="email" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="jenisKelamin" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="license" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="motor" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="namaLengkap" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordKonfirmed" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordLama" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="telepon" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="username" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ForgetPasswordController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ForgetPasswordController.h"/>
-            <relationships>
-                <relationship kind="action" name="resetPassword:"/>
-                <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="HistoryAndCommentController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HistoryAndCommentController.h"/>
-        </class>
-        <class className="HomeController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeController.h"/>
-            <relationships>
-                <relationship kind="action" name="editEndTime:"/>
-                <relationship kind="action" name="editStartTime:"/>
-                <relationship kind="action" name="fromMapButtonListener:"/>
-                <relationship kind="action" name="homeSegmentControlListener:"/>
-                <relationship kind="action" name="returnedFromProfile:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="returnedFromSearch:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="outlet" name="fromDateField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="homeSegmentControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-                <relationship kind="outlet" name="searchDisplayController" candidateClass="UISearchDisplayController"/>
-                <relationship kind="outlet" name="searchNavigation" candidateClass="UIView"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="toDateField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="LoginController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginController.h"/>
-            <relationships>
-                <relationship kind="action" name="LoginButtonListener:"/>
-                <relationship kind="action" name="geserKanan:"/>
-                <relationship kind="action" name="logout:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="usernameEditEnd:"/>
-                <relationship kind="action" name="usernameEditStart:"/>
-                <relationship kind="outlet" name="myTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="usernameTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="PostARideController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PostARideController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButtonListener:"/>
-                <relationship kind="action" name="initializeTrip:"/>
-                <relationship kind="action" name="kamuInginListener:"/>
-                <relationship kind="action" name="priceOnEditing:"/>
-                <relationship kind="action" name="timeStartEdit:"/>
-                <relationship kind="outlet" name="formLocationField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="kamuInginTextField" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="notesTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="pointLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="priceTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="timeTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="toLocationField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="viaLocationField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="PremiumPageController" superclassName="UIPageViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PremiumPageController.h"/>
-            <relationships>
-                <relationship kind="action" name="goPremium:"/>
-            </relationships>
-        </class>
-        <class className="ProfileWrapperController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileWrapperController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="searchNavigation" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="RegisterController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegisterController.h"/>
-            <relationships>
-                <relationship kind="action" name="submitButtonListener:"/>
-                <relationship kind="outlet" name="alamat" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="email" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="jenisKelamin" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="motor" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="namaLengkap" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordKonfirmed" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="telepon" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="username" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="SearchListController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchListController.h"/>
-        </class>
-        <class className="SettingController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingController.h"/>
-            <relationships>
-                <relationship kind="action" name="shareToFacebook:"/>
-                <relationship kind="action" name="shareToTwitter:"/>
-                <relationship kind="outlet" name="facebookSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="twitterSwitch" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-        <class className="UIStoryboardSegue" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

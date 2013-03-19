@@ -32,6 +32,7 @@
 		C094DF3716F8611200F08C1F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C094DF3616F8611200F08C1F /* libz.dylib */; };
 		C094DF3916F8611D00F08C1F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C094DF3816F8611D00F08C1F /* OpenGLES.framework */; };
 		C094DF3B16F8613700F08C1F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C094DF3A16F8613700F08C1F /* SystemConfiguration.framework */; };
+		C094DF3E16F89C4000F08C1F /* MapPickController.m in Sources */ = {isa = PBXBuildFile; fileRef = C094DF3D16F89C4000F08C1F /* MapPickController.m */; };
 		F51BE45116BF163000C234B1 /* AddComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = F51BE45016BF163000C234B1 /* AddComment.xib */; };
 		F51BE45916C0D3EC00C234B1 /* Connector.m in Sources */ = {isa = PBXBuildFile; fileRef = F51BE45816C0D3EC00C234B1 /* Connector.m */; };
 		F51BE46A16C206E200C234B1 /* ic_action_done.png in Resources */ = {isa = PBXBuildFile; fileRef = F51BE45A16C206E100C234B1 /* ic_action_done.png */; };
@@ -133,6 +134,8 @@
 		C094DF3616F8611200F08C1F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C094DF3816F8611D00F08C1F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		C094DF3A16F8613700F08C1F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C094DF3C16F89C4000F08C1F /* MapPickController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPickController.h; sourceTree = "<group>"; };
+		C094DF3D16F89C4000F08C1F /* MapPickController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPickController.m; sourceTree = "<group>"; };
 		F51BE45016BF163000C234B1 /* AddComment.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddComment.xib; sourceTree = "<group>"; };
 		F51BE45716C0D3EC00C234B1 /* Connector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connector.h; sourceTree = "<group>"; };
 		F51BE45816C0D3EC00C234B1 /* Connector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connector.m; sourceTree = "<group>"; };
@@ -396,6 +399,8 @@
 				F51F7ED816E7679600A09137 /* EditProfileController.m */,
 				C021688016F3456100F73E7D /* PremiumPageController.h */,
 				C021688116F3456100F73E7D /* PremiumPageController.m */,
+				C094DF3C16F89C4000F08C1F /* MapPickController.h */,
+				C094DF3D16F89C4000F08C1F /* MapPickController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -601,6 +606,7 @@
 				C0480E8D16EB38E2009C9DA2 /* SettingController.m in Sources */,
 				C021688216F3456100F73E7D /* PremiumPageController.m in Sources */,
 				C02168A916F3715000F73E7D /* PremiumView.m in Sources */,
+				C094DF3E16F89C4000F08C1F /* MapPickController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,6 +664,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -680,6 +687,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;

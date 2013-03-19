@@ -7,12 +7,14 @@
 //
 
 #import "OJEXAppDelegate.h"
+#import <GoogleMaps/GoogleMaps.h>
 
 @implementation OJEXAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [GMSServices provideAPIKey:@"AIzaSyCSJBwP3weMjs4NkJsHyiOUwSRunVXieSA"];
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
         UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
