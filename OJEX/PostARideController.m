@@ -45,8 +45,6 @@ Connector* c;
     // Dispose of any resources that can be recreated.
 }
 
-
-
 - (IBAction)timeStartEdit:(id)sender {
     [self callDP:self];
 }
@@ -79,6 +77,7 @@ UIDatePicker* datePickerView;
     
     datePickerView = [[UIDatePicker alloc] initWithFrame:pickerFrame];
     datePickerView.tag = 10;
+    datePickerView.datePickerMode = UIDatePickerModeTime;
     
     [datePickerView addTarget:self action:nil forControlEvents:UIControlEventValueChanged];
     
@@ -92,14 +91,21 @@ UIDatePicker* datePickerView;
 
 //action sheet delegate
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [self.view endEditing:YES];
-    [formatter setDateFormat:@"yyyy-mm-dd HH:mm"];
     
-    if (buttonIndex == 0)
-        self.timeTextField.text = [formatter stringFromDate:datePickerView.date];
-    if (buttonIndex == 1)
-        self.timeTextField.text = @"";
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    
+    NSDate *now = [NSDate date];
+    if ([datePickerView.date compare:now] ==  NSOrderedAscending) {
+        [Util showErrorWithMessage:@"Waktu yang dipilih harus setelah saat ini!"];        
+    } else {        
+        [formatter setDateFormat:@"HH:mm"];
+        
+        if (buttonIndex == 0)
+            self.timeTextField.text = [formatter stringFromDate:datePickerView.date];
+        if (buttonIndex == 1)
+            self.timeTextField.text = @"";
+    }
 }
 
 - (IBAction)initializeTrip:(id)sender {
@@ -117,9 +123,9 @@ UIDatePicker* datePickerView;
                             @"priceInPoint",
                             @"notes",
                             nil];
-    NSString* status = @"P";
-    if ([self.kamuInginTextField.titleLabel.text isEqualToString:@"menumpang"])
-        status = @"U";
+    NSString* status = @"U";
+    if ([self.kamuInginTextField.titleLabel.text isEqualToString:@"beri tumpangan"])
+        status = @"P";
 
     NSMutableArray*  data = [[NSMutableArray alloc] initWithObjects:
                              [NSString stringWithFormat:@"%d",[[GlobalVar getInstance] userid]],
@@ -138,19 +144,17 @@ UIDatePicker* datePickerView;
     c = [Connector getInstance];
     [c HTTPPostURL:url withSender:self withKeys:key andData:data callWhenDone:@selector(AddTripResponse) withLoading:YES];
     
-    
 }
 
 - (void) AddTripResponse {
     
     NSDictionary* json = [NSJSONSerialization
                           JSONObjectWithData:[c receivedData]
-                          
                           options:kNilOptions
                           error:nil];
     
     if ([[json objectForKey:@"success"] isEqualToString:@"false"])
-        [Util showErrorWithMessage:@"Error"];
+        [Util showErrorWithMessage:@"Gagal"];
     else
         [Util showMessage:@"Sukses"];
     

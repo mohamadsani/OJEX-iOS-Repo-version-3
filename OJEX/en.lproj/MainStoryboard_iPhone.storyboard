@@ -1606,11 +1606,11 @@
             </objects>
             <point key="canvasLocation" x="1317" y="1293"/>
         </scene>
-        <!--Premium Page Controller - Go Premium-->
+        <!--Premium Page Controller - Pengguna Premium-->
         <scene sceneID="pOI-6q-Jm4">
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="nF7-VR-cUN" customClass="PremiumPageController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Go Premium" id="JKE-uc-IEw">
+                    <navigationItem key="navigationItem" title="Pengguna Premium" id="JKE-uc-IEw">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="ryn-eU-HwP">
                             <view key="customView" contentMode="scaleToFill" id="ntg-2b-t80">
                                 <rect key="frame" x="5" y="0.0" width="44" height="44"/>
@@ -1635,7 +1635,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Go!" id="asl-w1-dK1">
+                        <barButtonItem key="rightBarButtonItem" title="Daftar" id="asl-w1-dK1">
                             <connections>
                                 <action selector="goPremium:" destination="nF7-VR-cUN" id="VcD-1x-1dd"/>
                             </connections>

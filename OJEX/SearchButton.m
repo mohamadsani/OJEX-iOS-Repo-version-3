@@ -42,9 +42,10 @@
     NSString *button1 = @"My Profile";
     if ([[[GlobalVar getInstance] user] isEqual:[[GlobalVar getInstance] userProfile]] &&[wrapper isKindOfClass:[ProfileWrapperController class]])
         button1 = @"Edit Profile";
-    NSString *button2 = @"Setting";
+    NSString *button2 = @"Pengaturan";
     NSString *button3 = @"Go Premium";
-    NSString *button4 = @"Logout";
+    NSString *button4 = @"Tentang";
+    NSString *button5 = @"Logout";
     NSString *cancelTitle = @"Cancel";
     
     UIActionSheet *actionSheet = [[UIActionSheet alloc]
@@ -52,7 +53,7 @@
                                   delegate:self
                                   cancelButtonTitle:cancelTitle
                                   destructiveButtonTitle:nil
-                                  otherButtonTitles:button1, button2, button3, button4, nil];
+                                  otherButtonTitles:button1, button2, button3, button4, button5, nil];
     
     [actionSheet showInView:self];
     
@@ -78,8 +79,6 @@
     //Get the name of the current pressed button
     NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
     
-//    if  ([buttonTitle isEqualToString:@"Destructive Button"]) {
-//           }
     if ([buttonTitle isEqualToString:@"My Profile"]) {
         //opening my profile
         UINavigationController *myNewVC =  [storyboard instantiateViewControllerWithIdentifier:@"ProfileNavigation"];
@@ -94,8 +93,13 @@
         [wrapper performSegueWithIdentifier:@"ProfileToEdit" sender:self];
     }
     
-    if ([buttonTitle isEqualToString:@"Setting"]) {
+    if ([buttonTitle isEqualToString:@"Pengaturan"]) {
         UINavigationController *myNewVC =  [storyboard instantiateViewControllerWithIdentifier:@"SettingNavigation"];
+        [wrapper presentViewController:myNewVC animated:YES completion:NULL];
+    }
+    
+    if ([buttonTitle isEqualToString:@"Tentang"]) {
+        UINavigationController *myNewVC =  [storyboard instantiateViewControllerWithIdentifier:@"PremiumNavigation"];
         [wrapper presentViewController:myNewVC animated:YES completion:NULL];
     }
     
